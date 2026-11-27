@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: Sea Animals - Rhythms and Reading (صفحة 14)</title>
+    <!-- تحميل مكتبة Tailwind CSS للتصميم العصري المتجاوب -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تحميل خطوط عربية وإنجليزية واضحة ومناسبة للأطفال -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f0f9ff;
+            background-image:
+                radial-gradient(at 10% 10%, rgba(125, 211, 252, 0.55) 0px, transparent 50%),
+                radial-gradient(at 90% 15%, rgba(196, 181, 253, 0.45) 0px, transparent 50%),
+                radial-gradient(at 85% 85%, rgba(254, 240, 138, 0.45) 0px, transparent 50%),
+                radial-gradient(at 15% 85%, rgba(167, 243, 208, 0.5) 0px, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230284c7' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        .en-text {
+            font-family: 'Fredoka', 'Inter', sans-serif;
+            direction: ltr;
+            unicode-bidi: isolate;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.85); opacity: 0.85; }
+            50% { transform: scale(1.18); opacity: 0.25; }
+            100% { transform: scale(0.85); opacity: 0.85; }
+        }
+        .speaking-ring {
+            animation: pulse-ring 1.5s infinite ease-in-out;
+        }
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-4px); }
+        }
+        .animate-float {
+            animation: float-gentle 4s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+            animation: float-gentle 4.5s ease-in-out 1.2s infinite;
+        }
+        .audio-btn {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .audio-btn:hover {
+            transform: scale(1.05);
+        }
+        .audio-btn:active {
+            transform: scale(0.95);
+        }
+        .clickable-phrase {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .clickable-phrase:hover {
+            transform: scale(1.015);
+        }
+        .shake {
+            animation: shake 0.45s ease-in-out;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-6px); }
+            40% { transform: translateX(6px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+        /* تظليل البطاقة أو السطر النشط أثناء قراءة المعلمة */
+        .active-reading-box {
+            background-color: #fef9c3 !important;
+            border-color: #f59e0b !important;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.38), 0 12px 22px -4px rgba(245, 158, 11, 0.25) !important;
+            transform: scale(1.02);
+            transition: all 0.25s ease;
+            position: relative;
+            z-index: 10;
+        }
+        .active-reading-text {
+            background: linear-gradient(120deg, #fde047 0%, #fef08a 100%);
+            padding: 2px 8px;
+            border-radius: 8px;
+            color: #78350f !important;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            transition: all 0.25s ease;
+        }
+        .ocean-chant-bg {
+            background: linear-gradient(180deg, #e0f2fe 0%, #bae6fd 50%, #e0f2fe 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 pb-20">
+
+    <!-- شريط علوي ثابت يوضح عنوان الدرس وأدوات التحكم بالصوت -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-sky-100">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+            <!-- عنوان الدرس -->
+            <div class="flex items-center gap-3">
+                <button type="button" onclick="speakText('Unit 2. Sea Animals. Rhythms and Reading. Just Like Something.')" class="audio-btn bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-full font-bold text-base sm:text-xl shadow-md flex items-center gap-2" title="اضغط لسماع العنوان">
+                    <span class="en-text">Unit 2: Rhythms and Reading</span>
+                    <i class="fa-solid fa-music text-sky-200 text-base"></i>
+                </button>
+                <span class="hidden md:inline-block text-sm font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                    الصفحة 14 • التشبيهات البحرية
+                </span>
+            </div>
+
+            <!-- مؤشر المعلمة الصوتية (نفس نظام الصوت التعليمي الهادئ) -->
+            <div id="teacher-status-box" class="flex flex-wrap items-center gap-2.5 bg-teal-50 border border-teal-200 px-3.5 py-1.5 rounded-full shadow-inner">
+                <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-teal-600 text-white shrink-0">
+                    <span id="teacher-pulse" class="hidden absolute inset-0 rounded-full bg-teal-400 speaking-ring"></span>
+                    <i class="fa-solid fa-chalkboard-user relative z-10 text-sm"></i>
+                </div>
+                <div class="text-xs sm:text-sm">
+                    <div class="flex flex-wrap items-center gap-1.5 text-[11px] text-teal-700">
+                        <span>الصوت:</span>
+                        <select id="teacher-voice-select" onchange="changeTeacherVoice(this.value)" class="bg-white/90 border border-teal-300 rounded-lg px-2 py-0.5 text-[11px] font-bold text-teal-900 focus:outline-none cursor-pointer">
+                            <option value="calm-female" selected>معلمة هادئة (صوت تعليمي 0.76x)</option>
+                            <option value="calm-male">معلم هادئ (صوت تعليمي 0.76x)</option>
+                        </select>
+                        <button type="button" onclick="toggleSpeechSpeed()" id="speed-toggle-btn" class="bg-white/90 hover:bg-teal-100 border border-teal-300 rounded-lg px-2 py-0.5 text-[11px] font-bold text-teal-900 transition cursor-pointer" title="تبديل سرعة النطق للتدريب">
+                            <i class="fa-solid fa-gauge-high text-teal-600"></i> <span id="speed-label">هادئ (0.76x)</span>
+                        </button>
+                    </div>
+                </div>
+                <button type="button" onclick="stopAudio()" id="stop-audio-btn" class="hidden mr-1 bg-rose-100 hover:bg-rose-200 text-rose-700 px-2.5 py-1 rounded-full text-xs font-bold transition">
+                    <i class="fa-solid fa-stop"></i> إيقاف
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- مؤشر القراءة الحي -->
+    <div id="liveReadingToast" class="fixed bottom-16 left-1/2 -translate-x-1/2 z-50 bg-slate-900/95 backdrop-blur-md text-white px-5 py-2.5 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 transition-all duration-300 opacity-0 pointer-events-none translate-y-8 max-w-[94vw]">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping flex-shrink-0"></div>
+        <div class="truncate" dir="ltr">
+            <span id="toastRateLabel" class="text-[11px] text-slate-400 block font-sans">Calm Educational Voice (0.76x):</span>
+            <span id="toastWord" class="en-text font-black text-amber-300 text-base sm:text-lg tracking-wide">...</span>
+        </div>
+    </div>
+
+    <!-- صندوق الإشعارات اللطيف للأطفال -->
+    <div id="toast-message" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-50 hidden bg-slate-800 text-white px-6 py-3 rounded-2xl shadow-xl font-bold text-sm flex items-center gap-2 transition-all">
+        <i class="fa-solid fa-sparkles text-yellow-400"></i>
+        <span id="toast-text">أحسنت!</span>
+    </div>
+
+    <!-- المحتوى الرئيسي للدرس -->
+    <main class="max-w-5xl mx-auto px-4 pt-6 space-y-10">
+
+        <!-- ========================================== -->
+        <!-- القسم الأول (تمرين 1): Listen, chant, and do - Just Like Something -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-3xl shadow-lg border border-sky-200 overflow-hidden">
+            <!-- رأس القسم -->
+            <div dir="ltr" class="bg-gradient-to-r from-blue-600 via-sky-600 to-cyan-500 p-4 sm:px-6 flex flex-wrap items-center justify-between gap-3 text-white">
+                <div class="flex items-center gap-3 clickable-phrase" onclick="speakText('1. Listen, chant, and do. Then practice in pairs. Just Like Something.')">
+                    <span class="bg-white text-blue-700 w-9 h-9 rounded-full flex items-center justify-center font-black text-lg shadow shrink-0">1</span>
+                    <div>
+                        <h2 class="en-text text-lg sm:text-2xl font-extrabold tracking-wide">Listen, chant, and do. Then practice in pairs.</h2>
+                        <span class="text-xs text-sky-100 font-semibold block">CD1 19 • أنشودة التشبيه بالحيوانات البحرية</span>
+                    </div>
+                </div>
+                <button type="button" dir="rtl" onclick="playAllSimileLines()" class="audio-btn ml-auto bg-white/25 hover:bg-white/35 text-white border border-white/40 px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2 backdrop-blur-sm shadow">
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>استمع للأنشودة كاملة (8)</span>
+                </button>
+            </div>
+
+            <!-- شريط عنوان الأنشودة وأزرار المقاطع -->
+            <div class="bg-gradient-to-r from-sky-50 via-indigo-50/70 to-amber-50/70 border-b border-sky-100 px-5 py-4 flex flex-wrap items-center justify-between gap-3">
+                <div dir="ltr" class="flex items-center gap-2.5 clickable-phrase" onclick="speakText('Just Like Something')">
+                    <span class="w-9 h-9 rounded-2xl bg-sky-600 text-white flex items-center justify-center shadow">
+                        <i class="fa-solid fa-water"></i>
+                    </span>
+                    <div>
+                        <h3 class="en-text text-xl sm:text-2xl font-black text-sky-800 tracking-wide">Just Like Something</h3>
+                        <p dir="rtl" class="text-xs font-bold text-slate-600">تماماً مثل شيء ما (استخدم <span class="en-text text-sky-700 font-extrabold">As + الصفة + as + الحيوان</span>)</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-2">
+                    <button type="button" onclick="playSimileGroup(0, 4)" class="audio-btn bg-sky-600 hover:bg-sky-700 text-white px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow-sm">
+                        <i class="fa-solid fa-volume-high"></i>
+                        <span>المجموعة الأولى (1 - 4)</span>
+                    </button>
+                    <button type="button" onclick="playSimileGroup(4, 8)" class="audio-btn bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow-sm">
+                        <i class="fa-solid fa-volume-high"></i>
+                        <span>المجموعة الثانية (5 - 8)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- شبكة البطاقات الثمانية التفاعلية مع الرسوم المتجهة لكل حيوان -->
+            <div dir="ltr" class="ocean-chant-bg p-5 sm:p-7">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+
+                    <!-- 1. As slippery as an eel. -->
+                    <div id="simile-card-1" data-speak="As slippery as an eel." onclick="speakText('As slippery as an eel.', null, false, 'simile-card-1')" class="sentence-box clickable-phrase bg-white/95 hover:bg-white rounded-3xl border-2 border-sky-200 hover:border-amber-400 p-4 shadow-md hover:shadow-xl transition-all flex items-center justify-between gap-3 group">
+                        <div class="flex-1 space-y-1.5 text-center">
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-sky-600 text-white font-black text-xs flex items-center justify-center shrink-0 en-text">1</span>
+                                <span class="text-[11px] font-bold bg-sky-100 text-sky-800 px-2.5 py-0.5 rounded-full" dir="rtl">ثعبان البحر (أملس / زلق)</span>
+                            </div>
+                            <p class="sentence-text en-text text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug text-center">
+                                As <span class="text-sky-600">slippery</span> as an <span class="text-amber-700">eel</span>.
+                            </p>
+                            <p dir="rtl" class="text-xs sm:text-sm font-bold text-slate-600 text-center">أملس وزلق مثل ثعبان البحر.</p>
+                        </div>
+                        <div class="flex flex-col items-center gap-1.5 shrink-0">
+                            <div class="w-24 h-20 rounded-2xl bg-white border border-sky-200 p-1.5 flex items-center justify-center overflow-hidden shadow-inner">
+                                <!-- SVG: Eel (ثعبان البحر الأخضر الزمردي المرقّط المطابق للصورة 100%) -->
+                                <svg viewBox="0 0 240 215" preserveAspectRatio="xMidYMid meet" class="w-full h-full animate-float group-hover:scale-105 transition-transform">
+                                    <defs>
+                                        <linearGradient id="greenEelBody14" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#10b981"/>
+                                            <stop offset="45%" stop-color="#059669"/>
+                                            <stop offset="100%" stop-color="#065f46"/>
+                                        </linearGradient>
+                                        <linearGradient id="greenEelFin14" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#34d399"/>
+                                            <stop offset="100%" stop-color="#047857"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <!-- الزعنفة الظهرية والذيلية المخططة على طول الجسم -->
+                                    <path d="M80,46 C86,34 98,30 116,30 C168,30 212,62 216,116 C220,164 184,192 142,188 C110,185 88,166 56,170 C38,172 26,184 22,182 C20,178 28,158 50,146 C78,132 110,148 142,148 C170,148 186,132 184,108 C182,82 156,74 128,82 C104,88 86,94 74,94 Z" fill="url(#greenEelFin14)" stroke="#0f172a" stroke-width="3.2" stroke-linejoin="round"/>
+
+                                    <!-- خطوط تقسيم الزعنفة الظهرية والبطنية -->
+                                    <path d="M98,32 L96,44 M112,31 L110,43 M126,32 L124,44 M140,34 L137,46 M154,38 L150,50 M168,45 L162,56 M181,54 L174,64 M192,66 L184,74 M202,80 L192,86 M209,96 L198,100 M213,114 L201,116 M212,132 L200,131 M206,150 L195,146 M195,166 L186,159 M180,178 L173,169 M162,185 L158,175 M144,187 L142,177 M126,184 L127,174 M108,178 L111,168 M90,172 L94,162 M72,169 L75,159 M54,171 L55,161 M136,80 L138,90 M150,78 L153,88 M164,82 L166,92 M176,92 L173,100" stroke="#064e3b" stroke-width="1.8" stroke-linecap="round"/>
+
+                                    <!-- الجسم الرئيسي الملتف لثعبان البحر -->
+                                    <path d="M22,76 C22,68 32,62 44,58 C56,48 76,44 108,44 C164,44 202,74 204,116 C206,154 176,178 140,174 C112,171 92,154 64,158 C46,160 32,172 24,182 C20,180 28,162 48,150 C74,136 108,152 140,152 C174,152 194,132 192,106 C190,78 162,68 128,76 C102,82 78,94 54,96 C38,98 24,98 24,92 C24,88 34,86 42,80 C34,78 22,78 22,76 Z" fill="url(#greenEelBody14)" stroke="#0f172a" stroke-width="3.2" stroke-linejoin="round"/>
+
+                                    <!-- الإضاءة الفاتحة أعلى الرأس والظهر -->
+                                    <path d="M32,68 C48,54 78,48 112,48 C154,48 186,68 196,98 C184,72 152,54 112,54 C78,54 48,60 32,68 Z" fill="#6ee7b7" opacity="0.45"/>
+
+                                    <!-- الفم المفتوح باللون الأحمر الداكن واللسان والأسنان الصغيرة -->
+                                    <path d="M24,76 C36,76 54,78 66,84 C54,92 38,94 26,90 C34,86 42,84 44,81 C38,79 30,78 24,76 Z" fill="#881337" stroke="#0f172a" stroke-width="2.2" stroke-linejoin="round"/>
+                                    <!-- اللسان الوردي داخل الفم -->
+                                    <path d="M34,88 Q44,82 54,84 Q46,90 34,88 Z" fill="#fb7185"/>
+                                    <!-- صف الأسنان العلوي -->
+                                    <path d="M26,77 L28,81 L31,77 L33,81 L36,77 L38,81 L41,78 L43,81" fill="#ffffff" stroke="#0f172a" stroke-width="0.9"/>
+                                    <!-- صف الأسنان السفلي -->
+                                    <path d="M28,90 L30,86 L33,90 L35,86 L38,89 L40,86 L43,88" fill="#ffffff" stroke="#0f172a" stroke-width="0.9"/>
+
+                                    <!-- فتحة الأنف -->
+                                    <circle cx="31" cy="69" r="1.6" fill="#064e3b"/>
+
+                                    <!-- العين المستديرة البارزة -->
+                                    <circle cx="52" cy="67" r="6.8" fill="#ffffff" stroke="#0f172a" stroke-width="2.2"/>
+                                    <circle cx="51" cy="67" r="3.6" fill="#0f172a"/>
+                                    <circle cx="49.5" cy="65.5" r="1.4" fill="#ffffff"/>
+
+                                    <!-- خط الخياشيم والزعنفة الصدرية الجانبية -->
+                                    <path d="M84,65 Q92,78 82,91" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+                                    <path d="M89,69 Q95,78 88,88" fill="none" stroke="#064e3b" stroke-width="1.6" stroke-linecap="round"/>
+                                    <path d="M98,74 C106,68 114,69 114,76 C114,83 106,84 98,79" fill="#10b981" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M100,74 L110,73 M100,77 L111,76 M100,79 L109,79" stroke="#064e3b" stroke-width="1.2" stroke-linecap="round"/>
+
+                                    <!-- البقع الصفراء الفاتحة والداكنة المميزة لثعبان البحر -->
+                                    <ellipse cx="86" cy="54" rx="2.8" ry="1.8" fill="#064e3b"/>
+                                    <ellipse cx="102" cy="52" rx="4.2" ry="2.2" fill="#064e3b"/>
+                                    <ellipse cx="122" cy="52" rx="4.8" ry="2.3" fill="#064e3b"/>
+                                    <ellipse cx="142" cy="54" rx="3.5" ry="2" fill="#064e3b"/>
+                                    <ellipse cx="160" cy="60" rx="4.5" ry="2.2" transform="rotate(18 160 60)" fill="#064e3b"/>
+                                    <ellipse cx="176" cy="72" rx="4.2" ry="2.2" transform="rotate(34 176 72)" fill="#064e3b"/>
+                                    <ellipse cx="188" cy="88" rx="4.5" ry="2.2" transform="rotate(56 188 88)" fill="#064e3b"/>
+                                    <ellipse cx="195" cy="108" rx="4.5" ry="2.2" transform="rotate(82 195 108)" fill="#064e3b"/>
+                                    <ellipse cx="192" cy="130" rx="4.5" ry="2.2" transform="rotate(-64 192 130)" fill="#064e3b"/>
+                                    <ellipse cx="178" cy="148" rx="4.8" ry="2.3" transform="rotate(-34 178 148)" fill="#064e3b"/>
+                                    <ellipse cx="158" cy="160" rx="4.5" ry="2.2" transform="rotate(-12 158 160)" fill="#064e3b"/>
+                                    <ellipse cx="136" cy="164" rx="4.8" ry="2.2" fill="#064e3b"/>
+                                    <ellipse cx="114" cy="160" rx="4.5" ry="2.2" transform="rotate(12 114 160)" fill="#064e3b"/>
+                                    <ellipse cx="92" cy="154" rx="4.2" ry="2" transform="rotate(8 92 154)" fill="#064e3b"/>
+                                    <ellipse cx="70" cy="152" rx="3.8" ry="1.9" fill="#064e3b"/>
+
+                                    <!-- البقع الصفراء الكريمية المضيئة -->
+                                    <circle cx="94" cy="59" r="2.1" fill="#fef08a"/>
+                                    <circle cx="112" cy="57" r="2.2" fill="#fef08a"/>
+                                    <ellipse cx="122" cy="61" rx="3" ry="1.8" fill="#fef08a"/>
+                                    <circle cx="136" cy="60" r="2.1" fill="#fef08a"/>
+                                    <ellipse cx="152" cy="56" rx="2.8" ry="1.8" fill="#fef08a"/>
+                                    <ellipse cx="168" cy="66" rx="3.2" ry="1.9" transform="rotate(25 168 66)" fill="#fef08a"/>
+                                    <circle cx="182" cy="80" r="2.2" fill="#fef08a"/>
+                                    <ellipse cx="190" cy="100" rx="2.8" ry="1.8" transform="rotate(75 190 100)" fill="#fef08a"/>
+                                    <circle cx="188" cy="118" r="2.2" fill="#fef08a"/>
+                                    <ellipse cx="184" cy="138" rx="3" ry="1.8" transform="rotate(-48 184 138)" fill="#fef08a"/>
+                                    <circle cx="168" cy="154" r="2.2" fill="#fef08a"/>
+                                    <ellipse cx="148" cy="158" rx="3" ry="1.8" fill="#fef08a"/>
+                                    <circle cx="126" cy="157" r="2.1" fill="#fef08a"/>
+                                    <circle cx="104" cy="152" r="2" fill="#fef08a"/>
+                                    <circle cx="82" cy="148" r="1.9" fill="#fef08a"/>
+                                </svg>
+                            </div>
+                            <span class="w-7 h-7 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs shadow-sm">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 2. As fat as a walrus. -->
+                    <div id="simile-card-2" data-speak="As fat as a walrus." onclick="speakText('As fat as a walrus.', null, false, 'simile-card-2')" class="sentence-box clickable-phrase bg-white/95 hover:bg-white rounded-3xl border-2 border-amber-200 hover:border-amber-400 p-4 shadow-md hover:shadow-xl transition-all flex items-center justify-between gap-3 group">
+                        <div class="flex-1 space-y-1.5 text-center">
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-amber-600 text-white font-black text-xs flex items-center justify-center shrink-0 en-text">2</span>
+                                <span class="text-[11px] font-bold bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full" dir="rtl">فظ البحر (سمين)</span>
+                            </div>
+                            <p class="sentence-text en-text text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug text-center">
+                                As <span class="text-amber-600">fat</span> as a <span class="text-orange-700">walrus</span>.
+                            </p>
+                            <p dir="rtl" class="text-xs sm:text-sm font-bold text-slate-600 text-center">سمين مثل فظ البحر.</p>
+                        </div>
+                        <div class="flex flex-col items-center gap-1.5 shrink-0">
+                            <div class="w-24 h-20 rounded-2xl bg-white border border-amber-200 p-1.5 flex items-center justify-center overflow-hidden shadow-inner">
+                                <!-- SVG: Walrus (فظ البحر الكرتوني البني المطابق للصورة 100%) -->
+                                <svg viewBox="0 0 260 220" preserveAspectRatio="xMidYMid meet" class="w-full h-full animate-float-delayed group-hover:scale-105 transition-transform">
+                                    <defs>
+                                        <linearGradient id="cartoonWalrusBody14" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#b46949"/>
+                                            <stop offset="55%" stop-color="#9a5436"/>
+                                            <stop offset="100%" stop-color="#7c3f26"/>
+                                        </linearGradient>
+                                        <linearGradient id="cartoonWalrusMuzzle14" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#e5b890"/>
+                                            <stop offset="100%" stop-color="#c99368"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <!-- الزعنفة الذيلية العلوية اليمنى -->
+                                    <path d="M214,142 C226,130 238,120 244,116 C248,114 250,122 246,130 C252,130 254,136 248,142 C252,146 250,152 240,152 C230,152 220,150 214,148 Z" fill="#8c4a2e" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+                                    <!-- الزعنفة الذيلية السفلية اليمنى -->
+                                    <path d="M204,154 C216,168 232,184 248,192 C254,194 256,188 250,180 C256,180 256,174 248,168 C252,164 250,158 242,156 C232,152 218,148 208,148 Z" fill="#7c3f26" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+
+                                    <!-- الزعنفة الأمامية البعيدة (اليسرى) -->
+                                    <path d="M48,126 C32,126 16,134 8,144 C4,148 8,152 16,151 C12,155 18,158 26,156 C24,160 32,162 42,160 C52,158 58,152 60,144 Z" fill="#8c4a2e" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+                                    <path d="M20,148 L36,144 M26,154 L42,150" stroke="#0f172a" stroke-width="1.8" stroke-linecap="round"/>
+
+                                    <!-- الجسم الرئيسي البني لافظ البحر -->
+                                    <path d="M52,58 C52,28 96,24 106,56 C114,82 142,96 174,112 C202,126 220,138 220,148 C220,158 184,168 134,168 C84,168 42,158 38,140 C34,122 52,92 52,58 Z" fill="url(#cartoonWalrusBody14)" stroke="#0f172a" stroke-width="2.8" stroke-linejoin="round"/>
+
+                                    <!-- الإضاءة الفاتحة أعلى الرأس والظهر -->
+                                    <path d="M58,48 C64,30 92,28 100,48 C90,34 68,34 58,48 Z" fill="#d48c6a" opacity="0.65"/>
+                                    <path d="M114,76 C138,90 168,104 196,122 C168,108 138,94 114,76 Z" fill="#d48c6a" opacity="0.5"/>
+
+                                    <!-- خطوط ثنيات الظهر والرقبة -->
+                                    <path d="M138,90 Q148,92 154,100" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+                                    <path d="M162,102 Q172,104 178,112" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+                                    <path d="M104,68 Q102,84 96,94" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+
+                                    <!-- الزعنفة الأمامية القريبة (اليمنى) -->
+                                    <path d="M84,126 C94,136 112,148 124,162 C128,166 124,172 114,172 C102,172 86,166 76,154 C70,146 70,134 76,126 Z" fill="#9a5436" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+                                    <path d="M104,158 L118,162 M100,164 L114,168" stroke="#0f172a" stroke-width="1.8" stroke-linecap="round"/>
+
+                                    <!-- الفم المفتوح المبتسم مع اللسان الوردي -->
+                                    <path d="M56,74 Q72,88 88,74 C86,88 76,94 68,92 C60,90 56,84 56,74 Z" fill="#7f1d1d" stroke="#0f172a" stroke-width="2.2" stroke-linejoin="round"/>
+                                    <path d="M62,84 Q70,79 78,84 C74,90 66,90 62,84 Z" fill="#fb7185"/>
+
+                                    <!-- الناب العاجي الأيسر -->
+                                    <path d="M48,74 L50,114 C50,119 56,119 56,114 L57,74 Z" fill="#f1f5f9" stroke="#0f172a" stroke-width="2.4" stroke-linejoin="round"/>
+                                    <path d="M53,76 L53,112" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+
+                                    <!-- الناب العاجي الأيمن -->
+                                    <path d="M82,74 L81,116 C81,121 88,121 88,116 L90,74 Z" fill="#f1f5f9" stroke="#0f172a" stroke-width="2.4" stroke-linejoin="round"/>
+                                    <path d="M86,76 L85,114" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+
+                                    <!-- الخطم العريض ذو الفصين باللون البيج الدافئ -->
+                                    <path d="M44,68 C42,56 58,52 69,58 C80,52 98,56 96,70 C96,80 80,82 69,74 C58,82 43,78 44,68 Z" fill="url(#cartoonWalrusMuzzle14)" stroke="#0f172a" stroke-width="2.4" stroke-linejoin="round"/>
+                                    <!-- خط منتصف الخطم -->
+                                    <line x1="69" y1="60" x2="69" y2="74" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+
+                                    <!-- الأنف البني الداكن -->
+                                    <path d="M61,55 C61,51 77,51 77,55 C77,59 72,62 69,62 C66,62 61,59 61,55 Z" fill="#451a03" stroke="#0f172a" stroke-width="2"/>
+                                    <ellipse cx="66" cy="54" rx="2.5" ry="1.1" fill="#9a5436" opacity="0.7"/>
+
+                                    <!-- العين اليسرى -->
+                                    <circle cx="58" cy="44" r="5.5" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+                                    <circle cx="59" cy="44.5" r="3.4" fill="#0f172a"/>
+                                    <circle cx="57.5" cy="42.8" r="1.4" fill="#ffffff"/>
+                                    <circle cx="60.5" cy="45.8" r="0.8" fill="#ffffff"/>
+
+                                    <!-- العين اليمنى -->
+                                    <circle cx="81" cy="44" r="5.5" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+                                    <circle cx="80" cy="44.5" r="3.4" fill="#0f172a"/>
+                                    <circle cx="78.5" cy="42.8" r="1.4" fill="#ffffff"/>
+                                    <circle cx="81.5" cy="45.8" r="0.8" fill="#ffffff"/>
+                                </svg>
+                            </div>
+                            <span class="w-7 h-7 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs shadow-sm">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 3. As big as a whale. -->
+                    <div id="simile-card-3" data-speak="As big as a whale." onclick="speakText('As big as a whale.', null, false, 'simile-card-3')" class="sentence-box clickable-phrase bg-white/95 hover:bg-white rounded-3xl border-2 border-blue-200 hover:border-amber-400 p-4 shadow-md hover:shadow-xl transition-all flex items-center justify-between gap-3 group">
+                        <div class="flex-1 space-y-1.5 text-center">
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-blue-600 text-white font-black text-xs flex items-center justify-center shrink-0 en-text">3</span>
+                                <span class="text-[11px] font-bold bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full" dir="rtl">الحوت (كبير)</span>
+                            </div>
+                            <p class="sentence-text en-text text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug text-center">
+                                As <span class="text-blue-600">big</span> as a <span class="text-indigo-700">whale</span>.
+                            </p>
+                            <p dir="rtl" class="text-xs sm:text-sm font-bold text-slate-600 text-center">كبير مثل الحوت.</p>
+                        </div>
+                        <div class="flex flex-col items-center gap-1.5 shrink-0">
+                            <div class="w-24 h-20 rounded-2xl bg-white border border-blue-200 p-1.5 flex items-center justify-center overflow-hidden shadow-inner">
+                                <!-- SVG: Whale (الحوت الكرتوني الأزرق المبتسم المطابق للصورة 100%) -->
+                                <svg viewBox="5 15 250 225" preserveAspectRatio="xMidYMid meet" class="w-full h-full animate-float group-hover:scale-105 transition-transform">
+                                    <defs>
+                                        <linearGradient id="whaleBlue14" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#3b82f6"/>
+                                            <stop offset="55%" stop-color="#2563eb"/>
+                                            <stop offset="100%" stop-color="#1d4ed8"/>
+                                        </linearGradient>
+                                        <linearGradient id="whaleBelly14" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#e0f2fe"/>
+                                            <stop offset="65%" stop-color="#bae6fd"/>
+                                            <stop offset="100%" stop-color="#7dd3fc"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- الزعنفة الصدرية البعيدة -->
+                                    <path d="M76,184 C74,205 84,225 96,227 C104,228 104,212 96,192 Z" fill="#1d4ed8" stroke="#0f172a" stroke-width="3.5" stroke-linejoin="round"/>
+                                    <!-- البطن السماوي الفاتح -->
+                                    <path d="M26,154 C36,196 82,218 134,204 C174,193 198,162 204,124 L178,136 C152,162 118,166 96,154 C68,162 42,160 26,154 Z" fill="url(#whaleBelly14)" stroke="#0f172a" stroke-width="3.5" stroke-linejoin="round"/>
+                                    <!-- خطوط البطن المائلة -->
+                                    <path d="M44,160 Q58,184 82,196" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+                                    <path d="M62,160 Q78,186 105,198" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+                                    <path d="M80,158 Q98,184 126,194" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+                                    <path d="M98,156 Q116,178 145,186" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+                                    <path d="M116,156 Q135,172 162,176" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+                                    <path d="M136,152 Q154,164 176,164" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+                                    <!-- الجسم العلوي الأزرق والذيل -->
+                                    <path d="M22,126 C24,84 58,64 98,74 C134,84 156,120 176,118 C192,116 198,98 192,82 C172,72 162,50 176,28 C174,48 184,64 202,68 C218,70 234,62 248,48 C246,74 230,90 208,92 C208,124 192,154 162,166 C136,176 112,170 96,154 C74,162 46,162 26,154 C14,148 12,134 22,126 Z" fill="url(#whaleBlue14)" stroke="#0f172a" stroke-width="3.6" stroke-linejoin="round"/>
+                                    <!-- الإضاءة العلوية الفاتحة -->
+                                    <path d="M28,118 C32,86 62,72 94,79 C64,77 38,92 28,118 Z" fill="#60a5fa" opacity="0.75"/>
+                                    <!-- تظليل الذيل -->
+                                    <path d="M174,42 C172,58 182,70 198,74 C186,66 178,54 174,42 Z" fill="#1e40af" opacity="0.55"/>
+                                    <path d="M206,74 C220,76 232,68 242,58 C234,74 220,84 206,84 Z" fill="#1e40af" opacity="0.45"/>
+                                    <!-- خط الفم والابتسامة -->
+                                    <path d="M26,154 C54,162 82,160 100,145" fill="none" stroke="#0f172a" stroke-width="3.4" stroke-linecap="round"/>
+                                    <path d="M93,144 Q101,142 104,149" fill="none" stroke="#0f172a" stroke-width="2.8" stroke-linecap="round"/>
+                                    <!-- الزعنفة الصدرية الأمامية -->
+                                    <path d="M104,164 C116,192 138,218 156,226 C164,228 164,214 150,192 C140,176 128,164 118,158 Z" fill="url(#whaleBlue14)" stroke="#0f172a" stroke-width="3.5" stroke-linejoin="round"/>
+                                    <path d="M112,166 C122,188 138,208 152,218 C142,202 130,184 120,166 Z" fill="#60a5fa" opacity="0.55"/>
+                                    <!-- العين الكبيرة المعبرة -->
+                                    <ellipse cx="82" cy="118" rx="13" ry="16" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+                                    <ellipse cx="84" cy="119" rx="8.5" ry="11" fill="#0284c7"/>
+                                    <ellipse cx="84" cy="119" rx="5.5" ry="7.5" fill="#0f172a"/>
+                                    <circle cx="81" cy="114" r="3.4" fill="#ffffff"/>
+                                    <circle cx="87" cy="122" r="1.6" fill="#ffffff"/>
+                                    <!-- الحاجب وخط أسفل العين -->
+                                    <path d="M72,98 Q83,93 93,99" fill="none" stroke="#0f172a" stroke-width="2.8" stroke-linecap="round"/>
+                                    <path d="M78,137 Q94,132 108,136" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <span class="w-7 h-7 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs shadow-sm">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 4. As fast as a dolphin. -->
+                    <div id="simile-card-4" data-speak="As fast as a dolphin." onclick="speakText('As fast as a dolphin.', null, false, 'simile-card-4')" class="sentence-box clickable-phrase bg-white/95 hover:bg-white rounded-3xl border-2 border-cyan-200 hover:border-amber-400 p-4 shadow-md hover:shadow-xl transition-all flex items-center justify-between gap-3 group">
+                        <div class="flex-1 space-y-1.5 text-center">
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-cyan-600 text-white font-black text-xs flex items-center justify-center shrink-0 en-text">4</span>
+                                <span class="text-[11px] font-bold bg-cyan-100 text-cyan-800 px-2.5 py-0.5 rounded-full" dir="rtl">الدلفين (سريع)</span>
+                            </div>
+                            <p class="sentence-text en-text text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug text-center">
+                                As <span class="text-cyan-600">fast</span> as a <span class="text-blue-700">dolphin</span>.
+                            </p>
+                            <p dir="rtl" class="text-xs sm:text-sm font-bold text-slate-600 text-center">سريع مثل الدلفين.</p>
+                        </div>
+                        <div class="flex flex-col items-center gap-1.5 shrink-0">
+                            <div class="w-24 h-20 rounded-2xl bg-white border border-cyan-200 p-1.5 flex items-center justify-center overflow-hidden shadow-inner">
+                                <!-- SVG: Dolphin (الدلفين الكرتوني الأزرق اللطيف ذو العين الخضراء المطابق للصورة 100%) -->
+                                <svg viewBox="0 0 280 215" preserveAspectRatio="xMidYMid meet" class="w-full h-full animate-float-delayed group-hover:scale-105 transition-transform">
+                                    <defs>
+                                        <linearGradient id="cuteDolphinBlue14" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#38bdf8"/>
+                                            <stop offset="45%" stop-color="#0284c7"/>
+                                            <stop offset="100%" stop-color="#0369a1"/>
+                                        </linearGradient>
+                                        <linearGradient id="cuteDolphinFin14" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#0ea5e9"/>
+                                            <stop offset="100%" stop-color="#0369a1"/>
+                                        </linearGradient>
+                                        <linearGradient id="cuteDolphinBelly14" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#ffffff"/>
+                                            <stop offset="75%" stop-color="#f1f5f9"/>
+                                            <stop offset="100%" stop-color="#cbd5e1"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <!-- الزعنفة البطنية/الصدرية البعيدة (اليسرى) -->
+                                    <path d="M96,138 C102,162 118,176 130,178 C134,178 134,166 124,148 Z" fill="#0369a1" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+
+                                    <!-- الزعنفة الصدرية السفلية الوسطى -->
+                                    <path d="M134,154 C138,180 156,198 184,198 C192,198 192,190 180,182 C168,174 158,158 154,146 Z" fill="url(#cuteDolphinFin14)" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+
+                                    <!-- الزعنفة الظهرية العلوية -->
+                                    <path d="M122,42 C136,28 156,22 166,26 C172,29 162,44 148,58 Z" fill="url(#cuteDolphinFin14)" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+
+                                    <!-- الذيل المرتفع للأعلى اليمين -->
+                                    <path d="M214,68 C202,52 204,28 200,14 C216,16 226,32 228,48 C242,40 262,40 272,52 C258,56 248,66 238,74 C230,80 222,80 216,76 Z" fill="url(#cuteDolphinFin14)" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+
+                                    <!-- البطن الأبيض الناصع والفك السفلي -->
+                                    <path d="M36,116 C30,130 40,142 62,138 C86,134 114,144 146,144 C188,144 218,118 226,74 L214,76 C194,108 164,122 132,118 C104,114 84,104 72,112 C62,120 48,120 36,116 Z" fill="url(#cuteDolphinBelly14)" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+                                    <!-- التظليل السفلي الناعم للبطن -->
+                                    <path d="M40,132 C48,138 62,138 78,134 C104,132 126,140 152,140 C188,140 214,114 224,78 C214,112 186,134 150,134 C124,134 102,126 78,128 C62,130 48,132 40,132 Z" fill="#cbd5e1"/>
+
+                                    <!-- الجسم الأزرق الرئيسي والرأس المستدير والخطم -->
+                                    <path d="M26,96 C28,54 58,28 96,30 C134,32 156,64 176,84 C194,102 214,82 226,64 C224,104 196,132 154,134 C122,136 96,110 74,108 C64,118 44,122 24,118 C10,116 6,104 16,98 C20,96 24,96 26,96 Z" fill="url(#cuteDolphinBlue14)" stroke="#0f172a" stroke-width="2.8" stroke-linejoin="round"/>
+
+                                    <!-- الإضاءة السماوية الفاتحة أعلى الرأس والظهر -->
+                                    <path d="M44,68 C54,42 82,34 112,42 C84,42 60,52 44,68 Z" fill="#7dd3fc" opacity="0.75"/>
+                                    <ellipse cx="64" cy="56" rx="18" ry="8" transform="rotate(-28 64 56)" fill="#bae6fd" opacity="0.65"/>
+
+                                    <!-- الفم المفتوح المبتسم واللسان الوردي -->
+                                    <path d="M36,118 C48,120 62,116 72,108 C66,126 52,134 40,132 C34,130 34,124 36,118 Z" fill="#0369a1" stroke="#0f172a" stroke-width="2.2" stroke-linejoin="round"/>
+                                    <path d="M40,128 Q50,116 66,114 C60,126 48,132 40,128 Z" fill="#f472b6" stroke="#0f172a" stroke-width="1.6"/>
+                                    <path d="M47,126 Q52,120 58,118" fill="none" stroke="#be185d" stroke-width="1.4" stroke-linecap="round"/>
+
+                                    <!-- خط ابتسامة الخد وخط الخطم -->
+                                    <path d="M22,96 Q36,98 46,104" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+                                    <path d="M68,106 Q74,104 77,110" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+
+                                    <!-- الحاجب -->
+                                    <path d="M68,56 Q82,46 98,55" fill="none" stroke="#0f172a" stroke-width="2.4" stroke-linecap="round"/>
+
+                                    <!-- العين الخضراء الكبيرة المميزة -->
+                                    <ellipse cx="85" cy="80" rx="16" ry="18" transform="rotate(-6 85 80)" fill="#ffffff" stroke="#0f172a" stroke-width="2.6"/>
+                                    <!-- تظليل رمادي خفيف داخل بياض العين -->
+                                    <path d="M70,82 C70,68 82,62 94,66 C82,65 74,74 74,88 C74,92 76,95 78,97 C73,94 70,88 70,82 Z" fill="#cbd5e1"/>
+                                    <!-- القزحية الخضراء الزمردية -->
+                                    <circle cx="88" cy="81" r="11.5" fill="#10b981" stroke="#0f172a" stroke-width="2"/>
+                                    <!-- البؤبؤ الأسود واللمعة البيضاء -->
+                                    <circle cx="88" cy="81" r="6.8" fill="#0f172a"/>
+                                    <circle cx="84.5" cy="77" r="2.8" fill="#ffffff"/>
+
+                                    <!-- الزعنفة الصدرية الأمامية الكبيرة -->
+                                    <path d="M114,114 C122,134 138,162 162,172 C172,176 176,170 170,160 C158,142 152,122 142,114 C134,108 122,108 114,114 Z" fill="url(#cuteDolphinFin14)" stroke="#0f172a" stroke-width="2.6" stroke-linejoin="round"/>
+                                    <path d="M120,112 C128,108 138,110 144,118 C136,113 128,112 120,112 Z" fill="#7dd3fc" opacity="0.75"/>
+                                </svg>
+                            </div>
+                            <span class="w-7 h-7 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center text-xs shadow-sm">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 5. As scary as a shark. -->
+                    <div id="simile-card-5" data-speak="As scary as a shark." onclick="speakText('As scary as a shark.', null, false, 'simile-card-5')" class="sentence-box clickable-phrase bg-white/95 hover:bg-white rounded-3xl border-2 border-rose-200 hover:border-amber-400 p-4 shadow-md hover:shadow-xl transition-all flex items-center justify-between gap-3 group">
+                        <div class="flex-1 space-y-1.5 text-center">
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-rose-600 text-white font-black text-xs flex items-center justify-center shrink-0 en-text">5</span>
+                                <span class="text-[11px] font-bold bg-rose-100 text-rose-800 px-2.5 py-0.5 rounded-full" dir="rtl">سمكة القرش (مخيف)</span>
+                            </div>
+                            <p class="sentence-text en-text text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug text-center">
+                                As <span class="text-rose-600">scary</span> as a <span class="text-slate-800">shark</span>.
+                            </p>
+                            <p dir="rtl" class="text-xs sm:text-sm font-bold text-slate-600 text-center">مخيف مثل سمكة القرش.</p>
+                        </div>
+                        <div class="flex flex-col items-center gap-1.5 shrink-0">
+                            <div class="w-24 h-20 rounded-2xl bg-white border border-rose-200 p-1.5 flex items-center justify-center overflow-hidden shadow-inner">
+                                <!-- SVG: Cartoon Shark (سمكة القرش الكرتونية الزرقاء المطابقة للصورة 100%) -->
+                                <svg viewBox="0 0 320 205" preserveAspectRatio="xMidYMid meet" class="w-full h-full animate-float group-hover:scale-105 transition-transform">
+                                    <defs>
+                                        <linearGradient id="cartoonSharkBlue14" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#3b82f6"/>
+                                            <stop offset="55%" stop-color="#2563eb"/>
+                                            <stop offset="100%" stop-color="#1d4ed8"/>
+                                        </linearGradient>
+                                        <linearGradient id="cartoonSharkBelly14" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#ffffff"/>
+                                            <stop offset="70%" stop-color="#f8fafc"/>
+                                            <stop offset="100%" stop-color="#e2e8f0"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <!-- الزعنفة البطنية الصغيرة في الخلف -->
+                                    <path d="M242,148 L268,144 C266,154 256,162 244,162 Z" fill="#2563eb" stroke="#0f172a" stroke-width="3" stroke-linejoin="round"/>
+
+                                    <!-- الزعنفة الظهرية العلوية -->
+                                    <path d="M126,38 C144,18 164,6 180,6 C174,20 170,34 172,48 Z" fill="url(#cartoonSharkBlue14)" stroke="#0f172a" stroke-width="3.2" stroke-linejoin="round"/>
+                                    <path d="M134,36 C148,20 162,10 174,9 C164,14 152,24 142,38 Z" fill="#93c5fd" opacity="0.6"/>
+
+                                    <!-- الجزء العلوي الأزرق والذيل -->
+                                    <path d="M6,26 C18,12 46,10 88,20 C142,34 198,56 260,72 C270,50 288,24 304,16 C298,42 296,68 302,94 C306,112 312,126 316,138 C294,132 276,118 264,98 C236,114 202,126 164,126 C144,126 136,112 132,96 C112,96 92,86 72,72 C48,54 24,38 6,26 Z" fill="url(#cartoonSharkBlue14)"/>
+
+                                    <!-- البطن الأبيض العاجي والفك السفلي -->
+                                    <path d="M6,26 C24,38 48,54 72,72 C92,86 112,96 132,96 C136,112 144,126 164,126 C202,126 236,114 264,98 C246,144 202,188 138,196 C82,202 46,174 44,154 C68,168 102,166 122,138 C130,126 128,110 122,98 C92,108 58,108 26,96 C12,68 4,42 6,26 Z" fill="url(#cartoonSharkBelly14)"/>
+
+                                    <!-- التظليل السفلي الناعم للبطن والوجه -->
+                                    <path d="M46,158 C68,184 102,196 144,192 C196,186 238,152 258,112 C236,146 196,176 142,182 C104,186 70,176 46,158 Z" fill="#cbd5e1"/>
+                                    <path d="M24,84 C54,96 86,98 118,90 C88,104 54,104 26,96 Z" fill="#cbd5e1"/>
+
+                                    <!-- الإضاءة الفاتحة أعلى الرأس والظهر والذيل -->
+                                    <path d="M12,24 C28,14 58,14 96,24 C146,38 198,58 254,74 C198,62 146,44 96,30 C58,20 28,18 12,24 Z" fill="#93c5fd" opacity="0.75"/>
+                                    <path d="M298,24 C286,36 276,56 272,76 C280,58 288,38 298,24 Z" fill="#93c5fd" opacity="0.65"/>
+
+                                    <!-- الإطار الخارجي الكحلي الداكن للجسم والذيل -->
+                                    <path d="M6,26 C18,12 46,10 88,20 C142,34 198,56 260,72 C270,50 288,24 304,16 C298,42 296,68 302,94 C306,112 312,126 316,138 C294,132 276,118 264,98 C246,146 202,188 138,196 C82,202 46,174 44,154 C68,168 102,166 122,138 C130,126 128,110 122,98 C92,108 58,108 26,96 C12,68 4,42 6,26 Z" fill="none" stroke="#0f172a" stroke-width="3.6" stroke-linejoin="round"/>
+
+                                    <!-- فتحة الأنف وحاجب الأنف -->
+                                    <path d="M30,46 Q38,42 46,48" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+                                    <ellipse cx="40" cy="52" rx="4.5" ry="2.2" transform="rotate(34 40 52)" fill="#0f172a"/>
+
+                                    <!-- الحاجب -->
+                                    <path d="M88,38 Q102,32 114,38" fill="none" stroke="#1e3a8a" stroke-width="2.4" stroke-linecap="round"/>
+
+                                    <!-- العين الكبيرة المعبرة -->
+                                    <circle cx="104" cy="64" r="22" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+                                    <circle cx="108" cy="64" r="13.5" fill="#0f172a"/>
+                                    <circle cx="111" cy="60" r="4.8" fill="#ffffff"/>
+
+                                    <!-- فتحات الخياشيم الثلاثة المنحنية -->
+                                    <path d="M144,78 Q154,98 148,118" fill="none" stroke="#0f172a" stroke-width="2.8" stroke-linecap="round"/>
+                                    <path d="M153,82 Q162,100 157,118" fill="none" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                                    <path d="M161,86 Q169,102 165,118" fill="none" stroke="#0f172a" stroke-width="2.4" stroke-linecap="round"/>
+
+                                    <!-- تجويف الفم المفتوح الواسع واللثة واللسان -->
+                                    <path d="M28,98 C58,108 92,108 122,98 C128,116 124,142 108,156 C90,170 62,170 46,154 C62,148 66,130 56,114 C48,104 38,100 28,98 Z" fill="#f87171" stroke="#0f172a" stroke-width="3" stroke-linejoin="round"/>
+                                    <!-- عمق الحلق باللون الوردي الفاتح والداكن -->
+                                    <path d="M56,112 C72,108 96,106 116,102 C112,122 98,138 78,144 C66,134 62,122 56,112 Z" fill="#fda4af"/>
+                                    <!-- اللسان الأحمر البارز -->
+                                    <path d="M70,152 C74,136 92,128 112,134 C116,144 106,158 90,162 C78,164 70,158 70,152 Z" fill="#dc2626" stroke="#7f1d1d" stroke-width="1.8"/>
+                                    <ellipse cx="90" cy="142" rx="10" ry="3.5" transform="rotate(-14 90 142)" fill="#f87171" opacity="0.65"/>
+
+                                    <!-- صف الأسنان العلوي الأبيض الحاد -->
+                                    <path d="M28,98 L33,115 L42,102 L48,119 L57,104 L64,121 L73,105 L81,121 L90,104 L98,119 L106,102 L114,115 L120,99 Q74,108 28,98 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2" stroke-linejoin="round"/>
+
+                                    <!-- صف الأسنان السفلي الأبيض الحاد -->
+                                    <path d="M46,154 L52,138 L60,158 L68,140 L76,161 L85,142 L94,160 L102,140 L109,154 L115,134 L120,144 C104,166 68,170 46,154 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2" stroke-linejoin="round"/>
+
+                                    <!-- تجعيدة زاوية الفم -->
+                                    <path d="M118,94 Q126,92 128,100" fill="none" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+
+                                    <!-- الزعنفة الصدرية الأمامية الكبيرة -->
+                                    <path d="M164,124 C188,122 216,136 238,162 C214,166 184,156 164,136 C160,132 160,126 164,124 Z" fill="url(#cartoonSharkBlue14)" stroke="#0f172a" stroke-width="3.2" stroke-linejoin="round"/>
+                                    <path d="M168,126 C188,124 212,136 230,156 C210,142 188,132 168,130 Z" fill="#93c5fd" opacity="0.7"/>
+                                </svg>
+                            </div>
+                            <span class="w-7 h-7 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center text-xs shadow-sm">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 6. As cute as a baby seal. -->
+                    <div id="simile-card-6" data-speak="As cute as a baby seal." onclick="speakText('As cute as a baby seal.', null, false, 'simile-card-6')" class="sentence-box clickable-phrase bg-white/95 hover:bg-white rounded-3xl border-2 border-pink-200 hover:border-amber-400 p-4 shadow-md hover:shadow-xl transition-all flex items-center justify-between gap-3 group">
+                        <div class="flex-1 space-y-1.5 text-center">
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-pink-600 text-white font-black text-xs flex items-center justify-center shrink-0 en-text">6</span>
+                                <span class="text-[11px] font-bold bg-pink-100 text-pink-800 px-2.5 py-0.5 rounded-full" dir="rtl">صغير الفقمة (لطيف)</span>
+                            </div>
+                            <p class="sentence-text en-text text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug text-center">
+                                As <span class="text-pink-600">cute</span> as a <span class="text-amber-800">baby seal</span>.
+                            </p>
+                            <p dir="rtl" class="text-xs sm:text-sm font-bold text-slate-600 text-center">لطيف مثل صغير الفقمة.</p>
+                        </div>
+                        <div class="flex flex-col items-center gap-1.5 shrink-0">
+                            <div class="w-24 h-20 rounded-2xl bg-white border border-pink-200 p-1.5 flex items-center justify-center overflow-hidden shadow-inner">
+                                <!-- SVG: Baby Seal (صغير الفقمة المطابق للصورة 100% وبدون أي علامات مائية) -->
+                                <svg viewBox="10 0 280 235" preserveAspectRatio="xMidYMid meet" class="w-full h-full animate-float-delayed group-hover:scale-105 transition-transform">
+                                    <!-- الظل الأرضي الرمادي الناعم -->
+                                    <ellipse cx="145" cy="204" rx="126" ry="22" fill="#e2e8f0" opacity="0.85"/>
+                                    <!-- الذيل والزعنفة الخلفية اليمنى -->
+                                    <path d="M132,96 C158,108 178,136 202,150 C216,156 226,150 238,142 C244,138 250,141 247,147 C244,151 240,153 240,153 C248,151 256,151 257,156 C258,160 250,162 243,163 C251,163 258,165 258,170 C258,174 249,175 241,174 C248,177 254,180 252,185 C250,189 241,187 233,183 C238,188 240,192 236,195 C232,197 224,191 218,184 C202,196 174,202 146,196 Z" fill="#5c473b"/>
+                                    <!-- الجسم الرئيسي والزعانف الأمامية -->
+                                    <path d="M104,12 C134,12 152,32 152,58 C152,74 144,86 142,96 C142,118 156,156 164,184 C172,188 184,190 190,194 C194,197 190,201 180,201 C186,204 192,207 190,211 C188,214 179,213 172,211 C179,215 186,219 184,223 C181,226 168,224 156,220 C142,216 132,208 132,202 L76,202 C76,208 66,216 52,220 C40,224 27,226 24,223 C22,219 29,215 36,211 C29,213 20,214 18,211 C16,207 22,204 28,201 C18,201 14,197 18,194 C24,190 36,188 44,184 C52,156 66,118 66,96 C64,86 56,74 56,58 C56,32 74,12 104,12 Z" fill="#5c473b"/>
+                                    <!-- الشعرتان أعلى الرأس -->
+                                    <path d="M101,13 Q97,6 91,3" fill="none" stroke="#5c473b" stroke-width="2.2" stroke-linecap="round"/>
+                                    <path d="M105,13 Q102,5 96,1" fill="none" stroke="#5c473b" stroke-width="2.2" stroke-linecap="round"/>
+                                    <!-- البطن البيضاوي الفاتح -->
+                                    <path d="M68,202 C68,162 82,134 104,134 C126,134 140,162 140,202 C122,207 86,207 68,202 Z" fill="#9c8273"/>
+                                    <!-- الحاجبان -->
+                                    <path d="M77,37 Q83,34 88,37" fill="none" stroke="#3b2c24" stroke-width="2.6" stroke-linecap="round"/>
+                                    <path d="M120,37 Q125,34 131,37" fill="none" stroke="#3b2c24" stroke-width="2.6" stroke-linecap="round"/>
+                                    <!-- العين اليسرى -->
+                                    <circle cx="85" cy="51" r="10.5" fill="#ffffff"/>
+                                    <circle cx="86.5" cy="51.5" r="6.2" fill="#0f172a"/>
+                                    <circle cx="84.5" cy="49" r="2.2" fill="#ffffff"/>
+                                    <!-- العين اليمنى -->
+                                    <circle cx="123" cy="51" r="10.5" fill="#ffffff"/>
+                                    <circle cx="121.5" cy="51.5" r="6.2" fill="#0f172a"/>
+                                    <circle cx="119.5" cy="49" r="2.2" fill="#ffffff"/>
+                                    <!-- الخطم البيج الفاتح -->
+                                    <path d="M104,61 C124,61 142,68 142,79 C142,88 131,93 120,92 C116,98 110,101 104,101 C98,101 92,98 88,92 C77,93 66,88 66,79 C66,68 84,61 104,61 Z" fill="#c7b6a7"/>
+                                    <!-- الأنف البني المحمر -->
+                                    <ellipse cx="104" cy="67" rx="9.5" ry="6.2" fill="#6b2121" stroke="#0f172a" stroke-width="1.6"/>
+                                    <ellipse cx="104" cy="65" rx="5.5" ry="2.2" fill="#993b3b" opacity="0.7"/>
+                                    <!-- الابتسامة -->
+                                    <line x1="104" y1="73" x2="104" y2="83" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+                                    <path d="M90,81 Q97,89 104,82 Q111,89 118,81" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+                                    <!-- الشوارب اليسرى -->
+                                    <path d="M92,74 Q80,71 70,74" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M91,77 Q79,77 69,80" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M92,80 Q81,82 72,86" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+                                    <!-- الشوارب اليمنى -->
+                                    <path d="M116,74 Q128,71 138,74" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M117,77 Q129,77 139,80" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M116,80 Q127,82 136,86" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <span class="w-7 h-7 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-xs shadow-sm">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 7. As slow as a seahorse. -->
+                    <div id="simile-card-7" data-speak="As slow as a seahorse." onclick="speakText('As slow as a seahorse.', null, false, 'simile-card-7')" class="sentence-box clickable-phrase bg-white/95 hover:bg-white rounded-3xl border-2 border-orange-200 hover:border-amber-400 p-4 shadow-md hover:shadow-xl transition-all flex items-center justify-between gap-3 group">
+                        <div class="flex-1 space-y-1.5 text-center">
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-orange-600 text-white font-black text-xs flex items-center justify-center shrink-0 en-text">7</span>
+                                <span class="text-[11px] font-bold bg-orange-100 text-orange-800 px-2.5 py-0.5 rounded-full" dir="rtl">حصان البحر (بطيء)</span>
+                            </div>
+                            <p class="sentence-text en-text text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug text-center">
+                                As <span class="text-orange-600">slow</span> as a <span class="text-amber-600">seahorse</span>.
+                            </p>
+                            <p dir="rtl" class="text-xs sm:text-sm font-bold text-slate-600 text-center">بطيء مثل حصان البحر.</p>
+                        </div>
+                        <div class="flex flex-col items-center gap-1.5 shrink-0">
+                            <div class="w-24 h-20 rounded-2xl bg-white border border-orange-200 p-1.5 flex items-center justify-center overflow-hidden shadow-inner">
+                                <!-- SVG: Seahorse (حصان البحر الذهبي والأزرق المطابق للصورة 100%) -->
+                                <svg viewBox="30 6 165 252" preserveAspectRatio="xMidYMid meet" class="w-full h-full animate-float group-hover:scale-105 transition-transform">
+                                    <defs>
+                                        <linearGradient id="seahorseBody14" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#facc15"/>
+                                            <stop offset="40%" stop-color="#f59e0b"/>
+                                            <stop offset="100%" stop-color="#ea580c"/>
+                                        </linearGradient>
+                                        <linearGradient id="seahorseBlue14" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#38bdf8"/>
+                                            <stop offset="55%" stop-color="#0284c7"/>
+                                            <stop offset="100%" stop-color="#0369a1"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- التاج العلوي والزعنفة الظهرية الشوكية الزرقاء -->
+                                    <path d="M90,44 L86,21 L102,32 L114,10 L126,30 L144,18 L143,39 L162,35 L153,54 L171,59 L157,76 L173,88 L157,103 L170,118 L154,132 L164,148 L146,159 L140,148 L135,55 Z" fill="url(#seahorseBlue14)" stroke="#0f172a" stroke-width="5" stroke-linejoin="round"/>
+                                    <!-- الزعنفة الجانبية الزرقاء المروحية -->
+                                    <path d="M132,148 L169,133 C182,150 180,180 160,195 L130,175 Z" fill="#38bdf8" stroke="#0f172a" stroke-width="5" stroke-linejoin="round"/>
+                                    <line x1="133" y1="156" x2="170" y2="152" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+                                    <line x1="133" y1="164" x2="169" y2="168" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+                                    <line x1="132" y1="172" x2="160" y2="184" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+                                    <!-- البطن الأزرق المخطط -->
+                                    <path d="M97,118 C80,140 82,182 112,206 L126,196 C106,172 104,142 114,122 Z" fill="url(#seahorseBlue14)" stroke="#0f172a" stroke-width="5" stroke-linejoin="round"/>
+                                    <path d="M103,121 C90,144 92,178 115,200" fill="none" stroke="#bae6fd" stroke-width="4.5" stroke-linecap="round"/>
+                                    <path d="M112,203 C126,214 137,224 137,235 L146,224 C143,209 130,199 118,192 Z" fill="#0284c7"/>
+                                    <!-- الجسم الذهبي البرتقالي الرئيسي والذيل الحلزوني -->
+                                    <path d="M94,42 C123,29 154,48 156,83 C157,106 147,122 143,140 C139,160 150,188 156,211 C162,235 145,254 120,252 C97,250 91,227 104,217 C115,210 125,219 119,227 C115,232 108,230 110,225 C102,229 105,241 118,241 C135,241 143,225 135,209 C122,188 101,175 101,148 C101,132 108,124 97,118 C104,108 112,102 114,96 C102,98 91,92 82,92 C70,92 64,105 51,103 C41,101 39,86 49,83 C60,81 70,74 76,59 C80,49 87,45 94,42 Z" fill="url(#seahorseBody14)" stroke="#0f172a" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round"/>
+                                    <!-- خطوط الحلقات على البطن -->
+                                    <path d="M90,134 Q108,136 125,135" fill="none" stroke="#0f172a" stroke-width="3.2" stroke-linecap="round"/>
+                                    <path d="M87,150 Q108,152 128,150" fill="none" stroke="#0f172a" stroke-width="3.2" stroke-linecap="round"/>
+                                    <path d="M90,166 Q110,168 130,165" fill="none" stroke="#0f172a" stroke-width="3.2" stroke-linecap="round"/>
+                                    <path d="M97,182 Q115,183 133,180" fill="none" stroke="#0f172a" stroke-width="3.2" stroke-linecap="round"/>
+                                    <path d="M108,197 Q122,197 137,193" fill="none" stroke="#0f172a" stroke-width="3.2" stroke-linecap="round"/>
+                                    <!-- خط الخد وفتحة الأنف -->
+                                    <path d="M114,96 C126,94 134,86 135,75" fill="none" stroke="#0f172a" stroke-width="3.8" stroke-linecap="round"/>
+                                    <path d="M51,88 Q54,91 57,88" fill="none" stroke="#0f172a" stroke-width="2.8" stroke-linecap="round"/>
+                                    <!-- العين البعيدة -->
+                                    <ellipse cx="74" cy="60" rx="8.5" ry="11.5" fill="#bae6fd" stroke="#0f172a" stroke-width="3.8"/>
+                                    <ellipse cx="72" cy="60" rx="4.8" ry="6.8" fill="#0f172a"/>
+                                    <circle cx="71" cy="57" r="2.2" fill="#ffffff"/>
+                                    <!-- العين القريبة الكبيرة -->
+                                    <circle cx="99" cy="63" r="15" fill="#bae6fd" stroke="#0f172a" stroke-width="3.8"/>
+                                    <circle cx="98" cy="63" r="8.8" fill="#0f172a"/>
+                                    <circle cx="95" cy="59" r="3.4" fill="#ffffff"/>
+                                </svg>
+                            </div>
+                            <span class="w-7 h-7 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center text-xs shadow-sm">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 8. As noisy as a seagull. -->
+                    <div id="simile-card-8" data-speak="As noisy as a seagull." onclick="speakText('As noisy as a seagull.', null, false, 'simile-card-8')" class="sentence-box clickable-phrase bg-white/95 hover:bg-white rounded-3xl border-2 border-indigo-200 hover:border-amber-400 p-4 shadow-md hover:shadow-xl transition-all flex items-center justify-between gap-3 group">
+                        <div class="flex-1 space-y-1.5 text-center">
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-indigo-600 text-white font-black text-xs flex items-center justify-center shrink-0 en-text">8</span>
+                                <span class="text-[11px] font-bold bg-indigo-100 text-indigo-800 px-2.5 py-0.5 rounded-full" dir="rtl">طائر النورس (صاخب / كثير الصوت)</span>
+                            </div>
+                            <p class="sentence-text en-text text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug text-center">
+                                As <span class="text-indigo-600">noisy</span> as a <span class="text-sky-700">seagull</span>.
+                            </p>
+                            <p dir="rtl" class="text-xs sm:text-sm font-bold text-slate-600 text-center">صاخب وكثير الصوت مثل طائر النورس.</p>
+                        </div>
+                        <div class="flex flex-col items-center gap-1.5 shrink-0">
+                            <div class="w-24 h-20 rounded-2xl bg-white border border-indigo-200 p-1.5 flex items-center justify-center overflow-hidden shadow-inner">
+                                <!-- SVG: Seagull (طائر النورس الكرتوني الواقف المطابق للصورة 100%) -->
+                                <svg viewBox="0 10 270 255" preserveAspectRatio="xMidYMid meet" class="w-full h-full animate-float-delayed group-hover:scale-105 transition-transform">
+                                    <!-- القدم البعيدة (اليسرى) بالبرتقالي -->
+                                    <path d="M98,194 L98,210 C94,212 94,216 98,218 L98,232 L72,235 C67,236 68,240 74,240 L84,240 L76,245 C72,247 75,250 81,248 L96,243 L106,246 C110,247 112,243 108,240 L103,234 L103,218 C106,216 106,212 103,210 L103,194 Z" fill="#f97316" stroke="#0f172a" stroke-width="3" stroke-linejoin="round"/>
+
+                                    <!-- القدم القريبة (اليمنى) بالبرتقالي -->
+                                    <path d="M126,196 L126,212 C122,214 122,218 126,220 L126,236 L98,242 C93,243 94,247 100,247 L112,246 L104,252 C100,255 104,258 110,255 L124,249 L136,253 C140,254 142,250 138,246 L132,238 L132,220 C136,218 136,214 132,212 L132,196 Z" fill="#fb923c" stroke="#0f172a" stroke-width="3" stroke-linejoin="round"/>
+
+                                    <!-- طرف الجناح الخلفي الأبيض الصغير فوق الذيل -->
+                                    <path d="M192,150 C206,144 222,140 228,144 C232,147 224,154 210,158 Z" fill="#ffffff" stroke="#0f172a" stroke-width="3.2" stroke-linejoin="round"/>
+
+                                    <!-- الجسم الأبيض والرأس المستدير -->
+                                    <path d="M48,54 C48,32 66,24 84,28 C98,32 104,46 102,64 C100,82 102,94 114,98 C144,114 182,146 218,162 L212,184 C174,198 124,204 82,192 C48,182 32,154 36,118 C40,94 52,82 54,68 C50,64 48,59 48,54 Z" fill="#ffffff" stroke="#0f172a" stroke-width="3.6" stroke-linejoin="round"/>
+
+                                    <!-- تظليل رمادي ناعم أسفل البطن والرقبة -->
+                                    <path d="M40,120 C38,154 54,178 86,188 C126,200 172,194 210,180 L212,184 C174,198 124,204 82,192 C48,182 32,154 36,118 Z" fill="#cbd5e1"/>
+                                    <path d="M54,68 C60,72 68,74 76,74 C68,79 58,82 50,82 Z" fill="#cbd5e1"/>
+
+                                    <!-- خط ابتسامة الرقبة/الذقن -->
+                                    <path d="M54,68 Q62,72 68,72" fill="none" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+
+                                    <!-- الجناح الأمامي الكبير المرفوع والذيل المتصل به -->
+                                    <path d="M98,110 C124,96 134,54 156,42 C180,30 226,24 256,22 C264,22 266,28 258,34 C250,40 242,44 234,46 C244,48 246,56 234,62 C226,66 218,68 210,70 C216,74 214,82 202,86 C194,88 186,90 178,90 C184,96 182,104 172,108 C176,114 172,122 162,124 C164,130 158,136 148,136 C168,144 196,148 228,150 C236,150 238,158 228,162 C222,164 216,166 210,166 C224,168 236,170 242,174 C248,178 242,184 230,184 C194,186 146,184 114,166 C94,154 88,132 98,110 Z" fill="#cbd5e1" stroke="#0f172a" stroke-width="3.6" stroke-linejoin="round"/>
+
+                                    <!-- الحافة العلوية البيضاء للجناح المرفوع -->
+                                    <path d="M100,110 C126,96 136,56 158,45 C176,36 206,30 234,27 C212,35 184,44 166,54 C146,66 136,102 112,118 C106,116 102,113 100,110 Z" fill="#ffffff"/>
+
+                                    <!-- الأطراف السوداء لريش الجناح العلوي مع اللمعات الرمادية -->
+                                    <path d="M226,25 C238,23 248,22 256,22 C264,22 266,28 258,34 C250,40 242,44 234,46 C244,48 246,56 234,62 C226,66 218,68 210,70 C216,74 214,82 202,86 L194,82 C202,78 202,72 196,68 C206,64 212,58 206,52 C218,48 224,40 218,34 C222,31 224,28 226,25 Z" fill="#0f172a"/>
+                                    <ellipse cx="253" cy="27" rx="5" ry="2" transform="rotate(-12 253 27)" fill="#94a3b8"/>
+                                    <ellipse cx="232" cy="54" rx="4.5" ry="2" transform="rotate(-14 232 54)" fill="#94a3b8"/>
+                                    <ellipse cx="204" cy="78" rx="4" ry="1.8" transform="rotate(-14 204 78)" fill="#94a3b8"/>
+
+                                    <!-- الأطراف السوداء لريش الذيل مع اللمعات الرمادية -->
+                                    <path d="M204,149 C212,149 220,150 228,150 C236,150 238,158 228,162 C222,164 216,166 210,166 C224,168 236,170 242,174 C248,178 242,184 230,184 C220,184 208,184 198,184 C204,178 204,172 198,168 C206,164 208,156 204,149 Z" fill="#0f172a"/>
+                                    <ellipse cx="226" cy="155" rx="4.5" ry="1.8" fill="#94a3b8"/>
+                                    <ellipse cx="234" cy="177" rx="5" ry="2" fill="#94a3b8"/>
+
+                                    <!-- خطوط تفاصيل ريش الجناح والذيل -->
+                                    <path d="M126,120 Q136,128 148,136" fill="none" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                                    <path d="M142,110 Q152,118 162,124" fill="none" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                                    <path d="M156,98 Q164,104 172,108" fill="none" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                                    <path d="M184,166 L210,166" fill="none" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+
+                                    <!-- المنقار البرتقالي المدبب -->
+                                    <path d="M52,52 C34,52 18,58 16,66 C28,64 42,62 56,58 Z" fill="#fb923c" stroke="#0f172a" stroke-width="3" stroke-linejoin="round"/>
+                                    <path d="M56,58 C42,62 28,64 16,66 C24,69 38,68 54,64 Z" fill="#f97316" stroke="#0f172a" stroke-width="2.8" stroke-linejoin="round"/>
+                                    <!-- فتحة الأنف على المنقار -->
+                                    <path d="M30,57 Q35,56 38,57" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+
+                                    <!-- العين اللطيفة مع الرموش الصغيرة -->
+                                    <circle cx="68" cy="46" r="6.8" fill="#0f172a"/>
+                                    <circle cx="66" cy="44" r="2.4" fill="#ffffff"/>
+                                    <path d="M73,41 L77,37 M75,44 L80,42 M75,47 L79,47" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+
+                                    <!-- الخد الوردي اللطيف -->
+                                    <ellipse cx="81" cy="57" rx="7.5" ry="4" fill="#f87171" opacity="0.8"/>
+
+                                    <!-- ريشات الصدر الصغيرة -->
+                                    <path d="M54,124 L54,130 M61,128 L61,134 M52,136 L53,142 M59,140 L60,146 M66,136 L67,142" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <span class="w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-xs shadow-sm">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- القسم الثاني (تمرين 2): Point and read by yourself + اختبار التوصيل السريع -->
+        <!-- ========================================== -->
+        <section class="bg-white rounded-3xl shadow-lg border border-amber-200 overflow-hidden">
+            <div dir="ltr" class="bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 p-4 sm:px-6 flex flex-wrap items-center justify-between gap-3 text-white">
+                <div class="flex items-center gap-3 clickable-phrase" onclick="speakText('2. Point and read by yourself.')">
+                    <span class="bg-white text-amber-600 w-9 h-9 rounded-full flex items-center justify-center font-black text-lg shadow shrink-0">2</span>
+                    <div>
+                        <h3 class="en-text text-lg sm:text-2xl font-extrabold">Point and read by yourself.</h3>
+                        <p dir="rtl" class="text-xs text-amber-100 font-semibold">تحدي القراءة والتوصيل: اختر الصفة الصحيحة لكل حيوان بحري</p>
+                    </div>
+                </div>
+                <div class="bg-white/25 backdrop-blur-sm border border-white/40 text-white font-extrabold px-4 py-1.5 rounded-full text-sm">
+                    النقاط: <span id="quiz-score" class="text-yellow-200 en-text text-base">0</span>
+                </div>
+            </div>
+
+            <div class="p-6 text-center space-y-5 bg-gradient-to-b from-amber-50/40 to-white">
+                <div dir="ltr" class="bg-white border-2 border-amber-200 rounded-2xl p-4 sm:p-5 max-w-2xl mx-auto shadow-sm space-y-2">
+                    <div class="flex items-center justify-center gap-2.5">
+                        <button type="button" onclick="speakQuizPrompt()" class="audio-btn w-10 h-10 rounded-full bg-amber-500 hover:bg-amber-600 text-white flex items-center justify-center shadow shrink-0" title="استمع للجملة">
+                            <i class="fa-solid fa-volume-high text-sm"></i>
+                        </button>
+                        <p id="quiz-question-en" class="en-text text-xl sm:text-2xl font-extrabold text-slate-800">
+                            As ______ as an eel.
+                        </p>
+                    </div>
+                    <p id="quiz-question-ar" dir="rtl" class="text-xs sm:text-sm font-bold text-slate-500">
+                        ______ مثل ثعبان البحر.
+                    </p>
+                </div>
+
+                <div id="quiz-options" dir="ltr" class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
+                    <!-- خيارات الإجابة -->
+                </div>
+
+                <div id="quiz-feedback" class="hidden font-bold text-sm sm:text-base py-2.5 px-5 rounded-2xl max-w-md mx-auto"></div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- شارة رقم الصفحة والوحدة: UNIT 2 • PAGE 14 -->
+        <!-- ========================================== -->
+        <div class="flex justify-center pt-2">
+            <div dir="ltr" onclick="speakText('Unit 2, Page 14. Rhythms and Reading.')" title="اضغط للاستماع لرقم الصفحة" class="clickable-phrase bg-[#fffbeb] border border-amber-200/80 rounded-3xl p-3 sm:px-6 shadow-md inline-flex items-center gap-4">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-blue-600 via-sky-600 to-cyan-600 text-white font-extrabold text-xl sm:text-2xl flex items-center justify-center shadow-md shrink-0 en-text">
+                    14
+                </div>
+                <div class="text-left">
+                    <div class="en-text text-lg sm:text-xl font-extrabold text-teal-900 tracking-wide flex items-center gap-1.5">
+                        <span>UNIT 2</span>
+                        <span class="text-teal-700">•</span>
+                        <span>PAGE <span class="text-sky-600">14</span></span>
+                    </div>
+                    <p dir="rtl" class="text-xs sm:text-sm font-bold text-amber-800 mt-0.5 flex items-center gap-1.5">
+                        <i class="fa-solid fa-book-open text-sky-500"></i>
+                        <span>صفحة ١٤ • كتاب الطالب</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- تذييل تعليمي -->
+    <footer class="max-w-5xl mx-auto px-4 pt-8 pb-4 text-center">
+        <div class="bg-white/85 border border-slate-200/80 rounded-2xl py-3 px-6 inline-flex flex-wrap items-center justify-center gap-3 shadow-sm text-xs sm:text-sm text-slate-600">
+            <span class="en-text font-extrabold text-teal-700 tracking-wide">LANGUA LEARN</span>
+            <span class="text-slate-300">•</span>
+            <span class="font-bold text-slate-700">جميع الحقوق محفوظة للأستاذ: ماجد سعد السويهري</span>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- البرمجة التفاعلية ونظام الصوت التعليمي الهادئ -->
+    <!-- ========================================== -->
+    <script>
+        // --- بيانات الجمل الثمانية في أنشودة Just Like Something ---
+        const simileLinesData = [
+            { text: "As slippery as an eel.", cardId: "simile-card-1" },
+            { text: "As fat as a walrus.", cardId: "simile-card-2" },
+            { text: "As big as a whale.", cardId: "simile-card-3" },
+            { text: "As fast as a dolphin.", cardId: "simile-card-4" },
+            { text: "As scary as a shark.", cardId: "simile-card-5" },
+            { text: "As cute as a baby seal.", cardId: "simile-card-6" },
+            { text: "As slow as a seahorse.", cardId: "simile-card-7" },
+            { text: "As noisy as a seagull.", cardId: "simile-card-8" }
+        ];
+
+        async function playSimileRange(startIdx, endIdx, includeTitle = false) {
+            stopAudio();
+            isSequencePlaying = true;
+            const mySession = speechSessionCounter;
+
+            try {
+                if (includeTitle) {
+                    await speakText("Just Like Something.", null, true);
+                    if (!isSequencePlaying || mySession !== speechSessionCounter) return;
+                    await new Promise(res => {
+                        const t = setTimeout(res, 450);
+                        activeTimeouts.push(t);
+                    });
+                }
+
+                for (let i = startIdx; i < endIdx; i++) {
+                    if (!isSequencePlaying || mySession !== speechSessionCounter) break;
+                    const item = simileLinesData[i];
+                    await speakText(item.text, null, true, item.cardId);
+                    if (!isSequencePlaying || mySession !== speechSessionCounter) break;
+                    if (i < endIdx - 1) {
+                        await new Promise(res => {
+                            const t = setTimeout(res, 420);
+                            activeTimeouts.push(t);
+                        });
+                    }
+                }
+            } finally {
+                if (mySession === speechSessionCounter) {
+                    isSequencePlaying = false;
+                    clearHighlights();
+                    hideLiveReadingToast();
+                    setSpeakingUI(false);
+                }
+            }
+        }
+
+        function playSimileGroup(start, end) {
+            playSimileRange(start, end, false);
+        }
+
+        function playAllSimileLines() {
+            playSimileRange(0, simileLinesData.length, true);
+        }
+
+        // --- اختبار القراءة والتوصيل (Point and read by yourself) ---
+        const simileQuizBank = [
+            {
+                qEn: "As ______ as an eel.",
+                fullEn: "As slippery as an eel.",
+                qAr: "______ مثل ثعبان البحر.",
+                options: ["slippery", "noisy", "fat"],
+                answer: "slippery"
+            },
+            {
+                qEn: "As ______ as a walrus.",
+                fullEn: "As fat as a walrus.",
+                qAr: "______ مثل فظ البحر.",
+                options: ["fast", "fat", "slow"],
+                answer: "fat"
+            },
+            {
+                qEn: "As ______ as a whale.",
+                fullEn: "As big as a whale.",
+                qAr: "______ مثل الحوت.",
+                options: ["cute", "big", "noisy"],
+                answer: "big"
+            },
+            {
+                qEn: "As ______ as a dolphin.",
+                fullEn: "As fast as a dolphin.",
+                qAr: "______ مثل الدلفين.",
+                options: ["slow", "scary", "fast"],
+                answer: "fast"
+            },
+            {
+                qEn: "As ______ as a shark.",
+                fullEn: "As scary as a shark.",
+                qAr: "______ مثل سمكة القرش.",
+                options: ["scary", "cute", "slow"],
+                answer: "scary"
+            },
+            {
+                qEn: "As ______ as a baby seal.",
+                fullEn: "As cute as a baby seal.",
+                qAr: "______ مثل صغير الفقمة.",
+                options: ["noisy", "cute", "slippery"],
+                answer: "cute"
+            },
+            {
+                qEn: "As ______ as a seahorse.",
+                fullEn: "As slow as a seahorse.",
+                qAr: "______ مثل حصان البحر.",
+                options: ["fast", "fat", "slow"],
+                answer: "slow"
+            },
+            {
+                qEn: "As ______ as a seagull.",
+                fullEn: "As noisy as a seagull.",
+                qAr: "______ مثل طائر النورس.",
+                options: ["noisy", "big", "cute"],
+                answer: "noisy"
+            }
+        ];
+
+        let currentQuizIdx = 0;
+        let quizScore = 0;
+        let isQuizTransitioning = false;
+
+        function renderQuizQuestion() {
+            try {
+                const item = simileQuizBank[currentQuizIdx];
+                const qEnEl = document.getElementById('quiz-question-en');
+                const qArEl = document.getElementById('quiz-question-ar');
+                const optsEl = document.getElementById('quiz-options');
+                const feedbackEl = document.getElementById('quiz-feedback');
+
+                if (qEnEl) qEnEl.textContent = item.qEn;
+                if (qArEl) qArEl.textContent = item.qAr;
+                if (feedbackEl) feedbackEl.classList.add('hidden');
+
+                if (optsEl) {
+                    optsEl.innerHTML = '';
+                    item.options.forEach(opt => {
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = 'en-text bg-white hover:bg-amber-50 border-2 border-slate-200 hover:border-amber-400 text-slate-800 font-extrabold text-lg py-3 px-4 rounded-2xl shadow-sm transition cursor-pointer';
+                        btn.textContent = opt;
+                        btn.onclick = () => handleQuizAnswer(opt, btn);
+                        optsEl.appendChild(btn);
+                    });
+                }
+            } catch (err) {
+                console.error('Error rendering quiz:', err);
+            }
+        }
+
+        function speakQuizPrompt() {
+            const item = simileQuizBank[currentQuizIdx];
+            if (item) {
+                speakText(item.qEn.replace('______', 'blank'));
+            }
+        }
+
+        async function handleQuizAnswer(selectedOpt, btnEl) {
+            if (isQuizTransitioning) return;
+            const item = simileQuizBank[currentQuizIdx];
+            const feedbackEl = document.getElementById('quiz-feedback');
+            if (!item || !feedbackEl) return;
+
+            feedbackEl.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'border-emerald-300', 'bg-rose-100', 'text-rose-800', 'border-rose-300');
+            btnEl.classList.remove('shake');
+
+            if (selectedOpt === item.answer) {
+                stopAudio();
+                isQuizTransitioning = true;
+                const mySession = speechSessionCounter;
+
+                quizScore += 10;
+                const scoreEl = document.getElementById('quiz-score');
+                if (scoreEl) scoreEl.textContent = quizScore;
+
+                const qEnEl = document.getElementById('quiz-question-en');
+                if (qEnEl) qEnEl.textContent = item.fullEn;
+
+                feedbackEl.textContent = `ممتاز يا بطل! إجابة صحيحة: ${item.fullEn}`;
+                feedbackEl.classList.add('bg-emerald-100', 'text-emerald-800', 'border', 'border-emerald-300');
+                btnEl.classList.add('border-emerald-500', 'bg-emerald-50', 'ring-4', 'ring-emerald-300');
+                showToast(`رائع! +10 نقاط`);
+
+                try {
+                    await speakText(`Great job! ${item.fullEn}`, null, true);
+                    if (mySession !== speechSessionCounter) return;
+
+                    await new Promise(res => {
+                        const timer = setTimeout(res, 750);
+                        activeTimeouts.push(timer);
+                    });
+                    if (mySession !== speechSessionCounter) return;
+
+                    currentQuizIdx = (currentQuizIdx + 1) % simileQuizBank.length;
+                    isQuizTransitioning = false;
+                    renderQuizQuestion();
+                } finally {
+                    if (mySession === speechSessionCounter) {
+                        isQuizTransitioning = false;
+                    }
+                }
+            } else {
+                btnEl.classList.add('shake');
+                feedbackEl.textContent = `حاول مرة أخرى! اختر الصفة المناسبة لهذا الحيوان.`;
+                feedbackEl.classList.add('bg-rose-100', 'text-rose-800', 'border', 'border-rose-300');
+                speakText(`Try again! ${selectedOpt}`);
+            }
+        }
+
+        // ==========================================
+        // نظام الصوت التعليمي الهادئ للمعلمة
+        // ==========================================
+        let preferMaleTeacher = false;
+        let isSlowTrainingMode = false;
+        let isSequencePlaying = false;
+        let activeTimeouts = [];
+        let speechSessionCounter = 0;
+
+        function getCurrentSpeechRate() {
+            return isSlowTrainingMode ? 0.65 : 0.76;
+        }
+
+        function showLiveReadingToast(txt) {
+            const toast = document.getElementById('liveReadingToast');
+            const wordEl = document.getElementById('toastWord');
+            const rateEl = document.getElementById('toastRateLabel');
+            if (rateEl) rateEl.innerText = `Calm Educational Voice (${getCurrentSpeechRate()}x):`;
+            if (wordEl) wordEl.innerText = txt;
+            if (toast) {
+                toast.classList.remove('opacity-0', 'translate-y-8');
+                toast.classList.add('opacity-100', 'translate-y-0');
+            }
+        }
+
+        function hideLiveReadingToast() {
+            const toast = document.getElementById('liveReadingToast');
+            if (toast) {
+                toast.classList.add('opacity-0', 'translate-y-8');
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }
+        }
+
+        function toggleSpeechSpeed() {
+            isSlowTrainingMode = !isSlowTrainingMode;
+            const speedLabel = document.getElementById('speed-label');
+            if (speedLabel) {
+                speedLabel.textContent = isSlowTrainingMode ? "بطيء جداً (0.65x)" : "هادئ (0.76x)";
+            }
+            showToast(isSlowTrainingMode ? "تم تفعيل النطق البطيء جداً للتدريب!" : "تم تفعيل الصوت التعليمي الهادئ (0.76x)!");
+        }
+
+        function changeTeacherVoice(voiceMode) {
+            preferMaleTeacher = (voiceMode === 'calm-male');
+            stopAudio();
+            speakText("Hello! Let's chant Just Like Something together.");
+            showToast(preferMaleTeacher ? "تم تفعيل صوت المعلم الهادئ" : "تم تفعيل صوت المعلمة الهادئة");
+        }
+
+        function findCalmEducationalVoice(voicesList, preferMale = false) {
+            if (!voicesList || voicesList.length === 0) return null;
+            const enVoices = voicesList.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+            const pool = enVoices.length > 0 ? enVoices : voicesList;
+
+            const femalePriority = [
+                'emma online (natural)',
+                'ava online (natural)',
+                'jenny online (natural)',
+                'aria online (natural)',
+                'michelle online (natural)',
+                'ana online (natural)',
+                'clara online (natural)',
+                'sonia online (natural)',
+                'google uk english female',
+                'google us english',
+                'samantha',
+                'karen',
+                'moira',
+                'tessa'
+            ];
+
+            const malePriority = [
+                'william multilingual',
+                'william online (natural)',
+                'andrew online (natural)',
+                'liam online (natural)',
+                'ryan online (natural)',
+                'daniel',
+                'david',
+                'mark'
+            ];
+
+            const listToCheck = preferMale ? [...malePriority, ...femalePriority] : [...femalePriority, ...malePriority];
+            for (const key of listToCheck) {
+                const match = pool.find(v => v.name.toLowerCase().includes(key));
+                if (match) return match;
+            }
+            return pool[0] || null;
+        }
+
+        function setSpeakingUI(isSpeaking) {
+            const pulse = document.getElementById('teacher-pulse');
+            const stopBtn = document.getElementById('stop-audio-btn');
+
+            if (isSpeaking) {
+                if (pulse) pulse.classList.remove('hidden');
+                if (stopBtn) stopBtn.classList.remove('hidden');
+            } else {
+                if (pulse) pulse.classList.add('hidden');
+                if (stopBtn) stopBtn.classList.add('hidden');
+            }
+        }
+
+        function clearHighlights() {
+            document.querySelectorAll('.active-reading-box').forEach(el => {
+                el.classList.remove('active-reading-box');
+            });
+            document.querySelectorAll('.active-reading-text').forEach(el => {
+                el.classList.remove('active-reading-text');
+            });
+        }
+
+        function highlightCardById(cardId) {
+            clearHighlights();
+            if (!cardId) return;
+            const el = document.getElementById(cardId);
+            if (!el) return;
+            el.classList.add('active-reading-box');
+            const innerText = el.querySelector('.sentence-text');
+            if (innerText) innerText.classList.add('active-reading-text');
+            el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function highlightSentence(text) {
+            clearHighlights();
+            if (!text) return;
+
+            const normalizedTarget = text.trim().replace(/\s+/g, ' ');
+            const speakElements = document.querySelectorAll('[data-speak]');
+
+            for (const el of speakElements) {
+                const attrText = (el.getAttribute('data-speak') || '').trim().replace(/\s+/g, ' ');
+                if (attrText === normalizedTarget) {
+                    if (el.classList.contains('sentence-box')) {
+                        el.classList.add('active-reading-box');
+                        const innerText = el.querySelector('.sentence-text');
+                        if (innerText) innerText.classList.add('active-reading-text');
+                    } else {
+                        el.classList.add('active-reading-text');
+                    }
+                    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    break;
+                }
+            }
+        }
+
+        function stopAudio() {
+            isSequencePlaying = false;
+            isQuizTransitioning = false;
+            speechSessionCounter++;
+            activeTimeouts.forEach(t => {
+                clearTimeout(t);
+                clearInterval(t);
+            });
+            activeTimeouts = [];
+
+            if ('speechSynthesis' in window) {
+                try {
+                    window.speechSynthesis.cancel();
+                } catch (e) {}
+            }
+            clearHighlights();
+            hideLiveReadingToast();
+            setSpeakingUI(false);
+        }
+
+        /**
+         * ينطق نصاً إنجليزياً بصوت المعلمة/المعلم الهادئ مع تظليل العنصر النشط
+         */
+        function speakText(text, btnElement = null, keepSequenceState = false, highlightCardId = null) {
+            return new Promise((resolve) => {
+                try {
+                    if (!keepSequenceState) {
+                        stopAudio();
+                    }
+
+                    const mySession = speechSessionCounter;
+                    const rate = getCurrentSpeechRate();
+                    const pitch = preferMaleTeacher ? 0.94 : 1.04;
+
+                    if (highlightCardId) {
+                        highlightCardById(highlightCardId);
+                    } else {
+                        highlightSentence(text);
+                    }
+                    showLiveReadingToast(text);
+                    setSpeakingUI(true);
+
+                    let finished = false;
+                    let safetyTimer = null;
+                    const finishOnce = () => {
+                        if (finished) return;
+                        finished = true;
+                        if (safetyTimer) clearTimeout(safetyTimer);
+                        if (!keepSequenceState && mySession === speechSessionCounter) {
+                            clearHighlights();
+                            hideLiveReadingToast();
+                            setSpeakingUI(false);
+                        }
+                        resolve();
+                    };
+
+                    const words = text.trim().split(/\s+/).filter(Boolean).length;
+                    const safetyMs = Math.max(2200, Math.round((words / rate) * 750) + 1800);
+                    safetyTimer = setTimeout(finishOnce, safetyMs);
+                    activeTimeouts.push(safetyTimer);
+
+                    if (!('speechSynthesis' in window)) {
+                        return;
+                    }
+
+                    const startTimer = setTimeout(() => {
+                        if (mySession !== speechSessionCounter || finished) return;
+                        try {
+                            const voices = window.speechSynthesis.getVoices();
+                            const chosenVoice = findCalmEducationalVoice(voices, preferMaleTeacher);
+
+                            const utterance = new SpeechSynthesisUtterance(text);
+                            window.activeUtteranceRef = utterance;
+                            if (chosenVoice) {
+                                utterance.voice = chosenVoice;
+                                utterance.lang = chosenVoice.lang || 'en-US';
+                            } else {
+                                utterance.lang = 'en-US';
+                            }
+                            utterance.rate = rate;
+                            utterance.pitch = pitch;
+                            utterance.volume = 1.0;
+
+                            utterance.onend = finishOnce;
+                            utterance.onerror = (err) => {
+                                if (err && (err.error === 'canceled' || err.error === 'interrupted')) return;
+                                finishOnce();
+                            };
+
+                            window.speechSynthesis.speak(utterance);
+                        } catch (e) {
+                            finishOnce();
+                        }
+                    }, 50);
+                    activeTimeouts.push(startTimer);
+                } catch (err) {
+                    resolve();
+                }
+            });
+        }
+
+        let toastTimer = null;
+        function showToast(message) {
+            const toast = document.getElementById('toast-message');
+            const toastText = document.getElementById('toast-text');
+            if (!toast || !toastText) return;
+
+            toastText.textContent = message;
+            toast.classList.remove('hidden');
+
+            if (toastTimer) clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+
+        window.onload = function () {
+            renderQuizQuestion();
+            if ('speechSynthesis' in window) {
+                try {
+                    window.speechSynthesis.getVoices();
+                    window.speechSynthesis.onvoiceschanged = () => {
+                        window.speechSynthesis.getVoices();
+                    };
+                } catch (e) {}
+            }
+        };
+    </script>
+</body>
+</html>
